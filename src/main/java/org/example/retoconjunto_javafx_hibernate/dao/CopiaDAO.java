@@ -92,4 +92,28 @@ public class CopiaDAO implements DAO<Copia>{
             session.getTransaction().commit();
         }
     }
+
+    /**
+     * Método que devuelve una lista con todas las copias que tienen un estado concreto
+     * @param estado
+     * @return
+     */
+    public List<Copia> findByEstado(String estado) {
+        try (Session session = sessionFactory.openSession()) {
+            return session.createQuery("from Copia where estado = :estado", Copia.class)
+                    .setParameter("estado", estado)
+                    .list();
+        }
+    }
+
+    /**
+     * Método que devuelve una lista con todas las copias que tienen más de una copia
+     * @return
+     */
+    public List<Copia> findWithMoreThanOneCopy() {
+        try (Session session = sessionFactory.openSession()) {
+            return session.createQuery("from Copia group by pelicula having count(*) > 1", Copia.class)
+                    .list();
+        }
+    }
 }

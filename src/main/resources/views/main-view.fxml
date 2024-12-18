@@ -73,6 +73,38 @@
                   <Image url="@/add_12966.png" />
                </image>
             </ImageView>
+             <Button fx:id="btnGenerarInformePeliculas" onAction="#generarInformePeliculas" prefHeight="47.0" style="-fx-border-color: black; -fx-border-width: 3px; -fx-background-color: #dae8e0;" text="Informe Películas">
+                 <font>
+                     <Font name="System Bold" size="14.0" />
+                 </font>
+                 <FlowPane.margin>
+                     <Insets right="40.0" />
+                 </FlowPane.margin>
+             </Button>
+             <Button fx:id="btnGenerarInformeMalEstado" onAction="#generarInformePeliculasMalEstado" prefHeight="47.0" style="-fx-border-color: black; -fx-border-width: 3px; -fx-background-color: #dae8e0;" text="Informe Mal Estado">
+                 <font>
+                     <Font name="System Bold" size="14.0" />
+                 </font>
+                 <FlowPane.margin>
+                     <Insets right="40.0" />
+                 </FlowPane.margin>
+             </Button>
+             <Button fx:id="btnGenerarInformeMasDeUnaCopia" onAction="#generarInformePeliculasMasDeUnaCopia" prefHeight="47.0" style="-fx-border-color: black; -fx-border-width: 3px; -fx-background-color: #dae8e0;" text="Informe Más de una Copia">
+                 <font>
+                     <Font name="System Bold" size="14.0" />
+                 </font>
+                 <FlowPane.margin>
+                     <Insets right="40.0" />
+                 </FlowPane.margin>
+             </Button>
+             <Button fx:id="btnGenerarInformeCopia" onAction="#generarInformeCopia" prefHeight="47.0" style="-fx-border-color: black; -fx-border-width: 3px; -fx-background-color: #dae8e0;" text="Informe Copia">
+                 <font>
+                     <Font name="System Bold" size="14.0" />
+                 </font>
+                 <FlowPane.margin>
+                     <Insets right="40.0" />
+                 </FlowPane.margin>
+             </Button>
          </children>
       </FlowPane>
    </bottom>

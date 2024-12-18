@@ -86,4 +86,30 @@ public class PeliculaDAO implements DAO<Pelicula> {
                     .uniqueResult();
         }
     }
+
+    /**
+     * Método que devuelve una película por su director
+     * @param director
+     * @return
+     */
+    public Pelicula findByDirector(String director) {
+        try (Session session = sessionFactory.openSession()) {
+            return session.createQuery("from Pelicula where director = :director", Pelicula.class)
+                    .setParameter("director", director)
+                    .uniqueResult();
+        }
+    }
+
+    /**
+     * Método que devuelve el numero de peliculas de un director
+     * @param director
+     * @return
+     */
+    public Integer countByDirector(String director) {
+        try (Session session = sessionFactory.openSession()) {
+            return session.createQuery("from Pelicula where director = :director", Pelicula.class)
+                    .setParameter("director", director)
+                    .list().size();
+        }
+    }
 }
